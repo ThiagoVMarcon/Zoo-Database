@@ -1,5 +1,3 @@
 # Zoo-Database
-# Zoo-Database
-# Zoo-Database
-# Zoo-Database
-# Zoo-Database
+
+# Database for a Zoo
