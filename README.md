@@ -1,1 +1,1 @@
-This is a Database for a fictional Zoo writes in SQL.
+This is a Database for a fictional Zoo written in SQL.
