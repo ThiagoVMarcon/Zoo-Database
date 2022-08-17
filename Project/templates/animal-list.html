@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Animais{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <table> 
+  <tr>
+    <th><b>Nome</b></th>
+    <th><b>Espécie</b></th>
+   
+   </tr>
+   
+  {% for a in animais %}
+    <tr>
+      <td>
+      {% if a.Nome %}
+        <a href="/animais/{{ a.CodAnimal }}">{{ a.Nome }}</a>
+      {% else %}
+        <a href="/animais/{{ a.CodAnimal }}">N/A</a>
+      {% endif %}
+      </td>
+      <td>{{a.Especie}}</td>
+    </tr>
+  {% endfor %}
+  </table>
+{% endblock %}
