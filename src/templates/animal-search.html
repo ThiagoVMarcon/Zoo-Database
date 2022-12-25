@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}{{ search.expr }} {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <h2>Procurar resultados</h2>
+  <p><ul>
+    {% for a in animais %}      
+      <li><a href="/animais/{{ a.CodAnimal }}">{{ a.Especie }}</a>
+          {% if a.Nome %}
+           ({{ a.Nome }})
+          {% else %}
+           (S/ nome)
+          {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+  </p>
+{% endblock %}

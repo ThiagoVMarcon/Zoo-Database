@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+  <h2>Informações do Recinto</h2>
+  <p>
+    <b>Código: </b>{{ recinto.CodRec }}
+  </p>
+  <p>
+    <b>Nome: </b>
+    {% if recinto.Nome %}
+    {{ recinto.Nome }}
+    {% else %}
+    N/A
+    {% endif %}
+  </p>
+  <p>
+    <b>Tamanho: </b>{{ recinto.Tamanho }} metros quadrados
+  </p>
+  <p>
+    <b>Data da Construção: </b>{{ recinto.DataCons }} 
+  </p>
+  <p>
+    <b>Animais: </b><ul>
+    {%if animais %}
+    {% for a in animais %}      
+      <li><a href="/animais/{{ a.CodAnimal }}">{{ a.Especie }}</a>
+      {% if a.NomeAnimal %}
+       ({{ a.NomeAnimal }})
+      {% else %}
+       (S/ nome)
+      {% endif %}
+      </li>
+    {% endfor %}
+    {% else %}
+      N/A
+    {% endif %}
+    </ul>
+  </p>
+  <p>
+    <b>Funcionários: </b><ul>
+    {%if funcionarios %}
+    {% for f in funcionarios %}      
+      <li><a href="/funcionarios/{{ f.CodFunc }}">{{ f.NomeFunc }}</a></li>
+    {% endfor %}
+    {% else %}
+      N/A
+    {% endif %}
+  </ul></p>
+  
+  
+{% endblock %}

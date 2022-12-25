@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+  <h2>Informações do Animal</h2>
+  <p>
+    <b>Código: </b>{{ animal.CodAnimal }}
+  </p>
+  <p>
+    <b>Nome: </b>
+    {% if animal.Nome %}
+    {{ animal.Nome }}
+    {% else %}
+    N/A
+    {% endif %}
+  </p>
+  <p>
+    <b>Espécie: </b>{{ animal.Especie }}
+  </p>
+  <p>
+    <b>Sexo: </b>{{ animal.Sexo }} 
+  </p>
+  <p>
+    <b>Peso: </b>{{ animal.Peso }} kilos
+  </p>
+  <p>
+    <b>Data de admissão: </b>{{ animal.DataAdmis }} 
+  </p>
+  <p>
+    <b>Data de nascimento: </b>{{ animal.DataNasc }} 
+  </p>
+  <p>
+    <b>Hábitos: </b>
+  <table>
+    <tr>
+        <th><b>Humor</b></th>
+        <th><b>Atividade</b></th>
+        <th><b>Comida Favorita</b></th>
+       
+    </tr> 
+    <tr>
+        <td>{{ animal.HabHumor }}</td>
+        <td>{{ animal.HabAtiv }}</td>
+        {% if animal.ComidaFav %}
+        <td>{{ animal.ComidaFav }}</td>
+        {% else %}
+        <td>N/A</td>
+        {% endif %}
+    </tr>
+  </table>
+  </p>
+  <p>
+    <b>Recinto:</b>
+        
+    <a href="/recintos/{{ recinto.CodRec }}">{{recinto.CodRec}}</a>
+      {% if recinto.NomeRec %}
+       ({{ recinto.NomeRec }})
+      {% else %}
+       (S/ nome)
+      {% endif %}
+      
+  </p>
+  
+  
+  
+{% endblock %}
